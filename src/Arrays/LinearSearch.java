@@ -8,13 +8,16 @@ public class LinearSearch {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] array = ArrayUtils.getArrayInt();
-        int number = scanner.nextInt();
-        for (int i=0;i<array.length;i++){
-            if(array[i]==number){
-                System.out.println("Number exists at index"+i);
-                return;
+        int target = scanner.nextInt();
+        System.out.println(linearSearch(array, target));
+    }
+
+    private static int linearSearch(int[] array, int target) {
+        for (int i = 0; i< array.length; i++){
+            if(array[i]== target){
+                return i;
             }
         }
-        System.out.println(-1);
+        return -1;
     }
 }
