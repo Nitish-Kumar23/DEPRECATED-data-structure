@@ -34,7 +34,7 @@ public class ArrayConcatenation {
 
     public static void main(String[] args) {
         int[] array = ArrayUtils.getArrayInt();
-        System.out.println(Arrays.toString(getArrayConcatenation(array)));
+        System.out.println(Arrays.toString(getArrayConcatenationOptimized(array)));
     }
 
     private static int[] getArrayConcatenation(int[] array) {
@@ -46,6 +46,16 @@ public class ArrayConcatenation {
             } else {
                 output[i] = array[i - size];
             }
+        }
+        return output;
+    }
+
+    private static int[] getArrayConcatenationOptimized(int[] array) {
+        int size = array.length;
+        int[] output = new int[2 * array.length];
+        for (int i = 0; i < array.length; i++) {
+           output[i] = array[i];
+           output[i+size] = array[i];
         }
         return output;
     }
