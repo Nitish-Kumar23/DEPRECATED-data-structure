@@ -12,11 +12,19 @@ public class LinearSearch {
         System.out.println(linearSearch(array, target));
     }
 
+    /**
+     * returns target element index in array
+     *
+     * @param array
+     * @param target
+     * @return
+     */
     private static int linearSearch(int[] array, int target) {
-        for (int i = 0; i< array.length; i++){
-            if(array[i]== target){
+        if (array == null || array.length == 0)
+            return -1;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == target)
                 return i;
-            }
         }
         return -1;
     }
