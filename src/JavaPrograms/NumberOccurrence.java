@@ -9,13 +9,13 @@ public class NumberOccurrence {
         int digit = scanner.nextInt();
         int reminder = 0;
         int count = 0;
-        while (number>0){
-            reminder = number%10;
-            if(reminder==digit){
+        while (number > 0) {
+            reminder = number % 10;
+            if (reminder == digit) {
                 count++;
             }
-            number = number/10;
+            number = number / 10;
         }
-        System.out.println("Digit " + digit +" occurred "+ count+" times");
+        System.out.println("Digit " + digit + " occurred " + count + " times");
     }
 }
