@@ -33,19 +33,19 @@ public class RichestCustomerWealth {
          * Input: accounts = [[2,8,7],[7,1,3],[1,9,5]]
          * Output: 17
          */
-        
-        int[][] customerWealth = {{2,8,7},{7,1,3},{1,9,5}};
+
+        int[][] customerWealth = {{2, 8, 7}, {7, 1, 3}, {1, 9, 5}};
         System.out.println(maximumWealth(customerWealth));
     }
 
     private static int maximumWealth(int[][] customerWealth) {
         int maximumWealth = Integer.MIN_VALUE;
-        for (int customer=0;customer<customerWealth.length;customer++){
+        for (int customer = 0; customer < customerWealth.length; customer++) {
             int wealth = 0;
-            for (int bank=0;bank<customerWealth[customer].length;bank++){
-               wealth = wealth+customerWealth[customer][bank];
+            for (int bank = 0; bank < customerWealth[customer].length; bank++) {
+                wealth = wealth + customerWealth[customer][bank];
             }
-            if(wealth>maximumWealth)
+            if (wealth > maximumWealth)
                 maximumWealth = wealth;
         }
         return maximumWealth;

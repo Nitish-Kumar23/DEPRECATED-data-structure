@@ -54,8 +54,8 @@ public class ArrayConcatenation {
         int size = array.length;
         int[] output = new int[2 * array.length];
         for (int i = 0; i < array.length; i++) {
-           output[i] = array[i];
-           output[i+size] = array[i];
+            output[i] = array[i];
+            output[i + size] = array[i];
         }
         return output;
     }
