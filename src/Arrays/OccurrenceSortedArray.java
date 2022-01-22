@@ -11,7 +11,9 @@ public class OccurrenceSortedArray {
     private static int[] searchRange(int[] nums, int target) {
         int[] result = {-1,-1};
         result[0] = getFirstOccurrence(nums,target);
-        result[1] = getLastOccurrence(nums,target);
+        if(result[0]!=-1) {
+            result[1] = getLastOccurrence(nums, target);
+        }
         return result;
     }
 
