@@ -8,6 +8,8 @@ public class RowColMatrix {
         System.out.println(Arrays.toString(getTargetElementV2(matrix,11)));
     }
 
+    //https://leetcode.com/problems/search-a-2d-matrix/submissions/
+    
     //brute force approach O(n^2) solution
     private static int[] getTargetElement(int[][] arr, int target) {
         int[] result = {-1,-1};
@@ -28,7 +30,8 @@ public class RowColMatrix {
     private static int[] getTargetElementV2(int[][] matrix, int target) {
         int[] result = {-1,-1};
         int row = 0;
-        int col = matrix.length-1;
+        //this is done for cases number of rows and columns are equal
+        int col = matrix[0].length-1;
         while (row<matrix.length && col>=0){
             if(matrix[row][col]==target){
                 result[0] = row;
@@ -42,4 +45,5 @@ public class RowColMatrix {
         }
         return result;
     }
+
 }
