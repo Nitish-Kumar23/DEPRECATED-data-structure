@@ -2,8 +2,8 @@ package Arrays;
 
 public class OrderAgnosticBinarySearch {
     public static void main(String[] args) {
-        int[] arr = {423,300,235,215,54,36,7,-8,-43};
-        System.out.println(getElementIndex(arr, 235));
+        int[] arr = {423};
+        System.out.println(getElementIndex(arr, 423));
     }
 
     public static int getElementIndex(int[] arr, int targetElement) {

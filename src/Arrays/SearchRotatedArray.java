@@ -52,7 +52,7 @@ public class SearchRotatedArray {
         return -1;
     }
     
-    private static int getPivot(int[] arr) {
+    public static int getPivot(int[] arr) {
         int start = 0,end = arr.length-1;
         while (start<=end){
             int mid = start+(end-start)/2;
