@@ -3,6 +3,7 @@ package RecursionQA;
 public class SkipCharacter {
     public static void main(String[] args) {
         System.out.println(skipCharacter("baccad",'a'));
+        System.out.println(skipCharacterV2("baccad",'a',""));
     }
 
     static StringBuilder result= new StringBuilder();
@@ -18,5 +19,15 @@ public class SkipCharacter {
             result.append(input.charAt(index));
         }
         return getSkippedCharacterString(input,character,index+1,result);
+    }
+
+    private static String skipCharacterV2(String input, char character,String output) {
+        if(input.isEmpty()){
+            return output;
+        }
+        if(input.charAt(0)==character){
+            return skipCharacterV2(input.substring(1),character,output);
+        }
+        return skipCharacterV2(input.substring(1),character,output+input.charAt(0));
     }
 }
