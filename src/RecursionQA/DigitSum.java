@@ -1,6 +1,6 @@
 package RecursionQA;
 
-public class DigitSUm {
+public class DigitSum {
     public static void main(String[] args) {
         System.out.println(digitSum(1342));
     }
