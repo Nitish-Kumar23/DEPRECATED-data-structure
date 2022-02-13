@@ -1,10 +1,12 @@
 package Arrays;
 
-public class MaximumSubarraySum {
+public class MaximumSubArraySum {
     public static void main(String[] args) {
         System.out.println(maximumSumSubArray(new int[]{1, 9, -1, -2, 7, 3, -1, 2}, 4));
         System.out.println(maximumSumSubArrayV1(new int[]{1, 9, -1, -2, 7, 3, -1, 2}, 4));
         System.out.println(maximumSumSubArrayV2(new int[]{1, 9, -1, -2, 7, 3, -1, 2}, 4));
+        System.out.println(maximumSumSubArrayV3(new int[]{1, 9, -1, -2, 7, 3, -1, 2}, 4));
+
     }
 
     /**
@@ -52,9 +54,10 @@ public class MaximumSubarraySum {
     }
 
     /**
-     * sliding window -> add the element which is new in sliding window in existing sum and 
+     * sliding window -> add the element which is new in sliding window in existing sum and
      * subtract the element which got removed from window, keep updating maximum sum
      * TIme complexity - both loops are iterating at max n times : O(n)
+     *
      * @param arr
      * @param k
      * @return
@@ -67,6 +70,30 @@ public class MaximumSubarraySum {
         }
         for (int end = k; end < arr.length; end++) {
             windowSum += arr[end] - arr[end - k];
+            if (windowSum > maxSum) {
+                maxSum = windowSum;
+            }
+        }
+        return maxSum;
+    }
+
+    /**
+     * Two pointer approach -> similar to sliding window.
+     * Here we are keeping two pointers start and end to track elements which left and entered the sliding window
+     * Time complexity - O(n) -> both the loops can traverse n times in worst case
+     * @param arr
+     * @param k
+     * @return
+     */
+    private static int maximumSumSubArrayV3(int[] arr, int k) {
+        int windowSum = 0;
+        int maxSum = Integer.MIN_VALUE;
+        int start = 0, end = 0;
+        while (end < k) {
+            windowSum += arr[end++];
+        }
+        while (end < arr.length) {
+            windowSum += arr[end++] - arr[start++];
             if (windowSum > maxSum) {
                 maxSum = windowSum;
             }
