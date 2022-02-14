@@ -1,8 +1,8 @@
 package DS;
 
 public class LLNode {
-    private int value;
-    private LLNode next;
+    public int value;
+    public LLNode next;
 
     public LLNode() {
     }
@@ -32,13 +32,5 @@ public class LLNode {
     public void setNext(LLNode next) {
         this.next = next;
     }
-
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("LinkedListNode{");
-        sb.append("value=").append(value);
-        sb.append(", next=").append(next);
-        sb.append('}');
-        return sb.toString();
-    }
+    
 }
