@@ -33,4 +33,13 @@ public class LLNode {
         this.next = next;
     }
     
+    public void printLinkedList(){
+        LLNode temp = this;
+        while (temp != null) {
+            System.out.print(temp.getValue() + "->");
+            temp = temp.getNext();
+        }
+        System.out.println("END");
+    }
+    
 }
