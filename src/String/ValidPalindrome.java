@@ -1,3 +1,5 @@
+package String;
+
 public class ValidPalindrome {
     public static void main(String[] args) {
         System.out.println(isValidPalindrome("0P"));
