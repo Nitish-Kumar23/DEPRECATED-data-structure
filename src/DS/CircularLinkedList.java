@@ -1,15 +1,15 @@
 package DS;
 
 public class CircularLinkedList {
-    public LLNode head;
-    public LLNode tail;
+    public ListNode head;
+    public ListNode tail;
 
     public CircularLinkedList() {
         this.head = null;
         this.tail = null;
     }
 
-    public CircularLinkedList(LLNode head, LLNode tail) {
+    public CircularLinkedList(ListNode head, ListNode tail) {
         this.head = head;
         this.tail = tail;
     }
@@ -24,11 +24,11 @@ public class CircularLinkedList {
         list.printLinkedList();
     }
     
-    public LLNode getNode(int value){
-        LLNode node = head;
+    public ListNode getNode(int value){
+        ListNode node = head;
         if(head!=null){
             do{
-                if(node.getValue()==value)
+                if(node.getVal()==value)
                     return node;
                 node = node.getNext();
             }while (node!=head);
@@ -37,20 +37,20 @@ public class CircularLinkedList {
     }
 
     private void printLinkedList() {
-        LLNode node = head;
+        ListNode node = head;
         while (node!=tail){
-            System.out.print(node.getValue()+"->");
+            System.out.print(node.getVal()+"->");
             node=node.getNext();
         }
-        System.out.println(node.getValue()+"->HEAD");
+        System.out.println(node.getVal()+"->HEAD");
 
     }
 
     private void printLinkedListV1() {
-        LLNode node = head;
+        ListNode node = head;
         if (head != null) {
             do {
-                System.out.print(node.getValue() + "->");
+                System.out.print(node.getVal() + "->");
                 node = node.getNext();
             } while (node != head);
             System.out.println("HEAD");
@@ -58,7 +58,7 @@ public class CircularLinkedList {
     }
 
     public  void insertNode(int value){
-        LLNode node = new LLNode(value);
+        ListNode node = new ListNode(value);
         if(head==null){
             head = node;
             tail = node;
@@ -69,8 +69,8 @@ public class CircularLinkedList {
         tail = node;
     }
     
-    public void deleteNode(LLNode deletionNode){
-        LLNode node = head;
+    public void deleteNode(ListNode deletionNode){
+        ListNode node = head;
         if(head!=null){
             do {
                 if(node.getNext()==deletionNode){

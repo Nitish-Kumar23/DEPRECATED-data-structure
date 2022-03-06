@@ -1,16 +1,16 @@
 package LinkedList;
 
-import DS.LLNode;
+import DS.ListNode;
 
 public class RemoveLinkedListElements {
     public static void main(String[] args) {
-        LLNode node1 = new LLNode(1);
-        LLNode node2 = new LLNode(2);
-        LLNode node3 = new LLNode(6);
-        LLNode node4 = new LLNode(3);
-        LLNode node5 = new LLNode(4);
-        LLNode node6 = new LLNode(5);
-        LLNode node7 = new LLNode(6);
+        ListNode node1 = new ListNode(1);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(6);
+        ListNode node4 = new ListNode(3);
+        ListNode node5 = new ListNode(4);
+        ListNode node6 = new ListNode(5);
+        ListNode node7 = new ListNode(6);
         node1.setNext(node2);
         node2.setNext(node3);
         node3.setNext(node4);
@@ -21,12 +21,12 @@ public class RemoveLinkedListElements {
         removeElements(node1,6).printLinkedList();
     }
 
-    public static LLNode removeElements(LLNode head, int val) {
+    public static ListNode removeElements(ListNode head, int val) {
         if(head==null){
             return null;
         }
-        LLNode headV = removeElements(head.next,val);
-        if(head.value==val){
+        ListNode headV = removeElements(head.next,val);
+        if(head.val ==val){
             return headV;
         }
         head.next=headV;
