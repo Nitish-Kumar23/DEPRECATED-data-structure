@@ -10,7 +10,8 @@ public class MiddleLinkedList {
         ListNode node3 = new ListNode(3,node4);
         ListNode node2 = new ListNode(2,node3);
         ListNode head = new ListNode(1,node2);
-        System.out.println(middleNode(head).val);
+        MiddleLinkedList list = new MiddleLinkedList();
+        System.out.println(list.middleNode(head).val);
         System.out.println(middleNodeV1(head).val);
     }
 
@@ -21,7 +22,7 @@ public class MiddleLinkedList {
      * @param head
      * @return
      */
-    private static ListNode middleNode(ListNode head) {
+    public ListNode middleNode(ListNode head) {
         ListNode slow = head;
         ListNode fast = head;
         while(slow!=null && fast!=null && fast.next!=null){

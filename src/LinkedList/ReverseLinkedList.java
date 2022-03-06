@@ -1,5 +1,6 @@
 package LinkedList;
 
+import DS.ListNode;
 import DS.MyLinkedList;
 
 import java.util.Stack;
@@ -14,8 +15,8 @@ public class ReverseLinkedList {
         list.addAtTail(5);
         MyLinkedList.printLinkedList();
 //        printLL(reverseLL(MyLinkedList.getHead()));
-        printLL(reverseLLV2(MyLinkedList.getHead()));
-
+        printLL(new ReverseLinkedList().reverseLLV2(MyLinkedList.getHead()));
+        
     }
 
     private static void printLL(MyLinkedList.LinkedListNode head) {
@@ -49,11 +50,23 @@ public class ReverseLinkedList {
         return reverseLLHead;
     }
 
-    private static MyLinkedList.LinkedListNode reverseLLV2(MyLinkedList.LinkedListNode head) {
+    public MyLinkedList.LinkedListNode reverseLLV2(MyLinkedList.LinkedListNode head) {
         MyLinkedList.LinkedListNode current = head;
         MyLinkedList.LinkedListNode prev = null;
         while (current!=null){
             MyLinkedList.LinkedListNode temp = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = temp;
+        }
+        return prev;
+    }
+
+    public ListNode reverseLLV2(ListNode head) {
+        ListNode current = head;
+        ListNode prev = null;
+        while (current!=null){
+            ListNode temp = current.getNext();
             current.setNext(prev);
             prev = current;
             current = temp;
