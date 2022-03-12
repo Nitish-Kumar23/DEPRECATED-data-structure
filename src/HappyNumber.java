@@ -4,6 +4,7 @@ import java.util.Map;
 public class HappyNumber {
     public static void main(String[] args) {
         System.out.println(isHappy(2));
+        System.out.println(isHappyV1(2));
     }
 
     //https://leetcode.com/problems/happy-number/
@@ -20,6 +21,28 @@ public class HappyNumber {
             }
             map.put(n,true);
             n = square;
+        }
+    }
+
+    /**
+     * slow and fast pointer approach (based on linked list) 
+     * kind of similar to hashmap -- if slow and fast pointer meet then it's not a happy number
+     * if square of digits is equal to 1 then it's a happy number
+     * @param n
+     * @return
+     */
+    public static boolean isHappyV1(int n) {
+        int slow = getSquareSumOfDigits(n);
+        int fast = getSquareSumOfDigits(n);
+        while (true){
+            slow = getSquareSumOfDigits(slow);
+            fast = getSquareSumOfDigits(getSquareSumOfDigits(fast));
+            if(slow==1||fast==1){
+                return true;
+            }
+            if(slow==fast){
+                return false;
+            }
         }
     }
 
