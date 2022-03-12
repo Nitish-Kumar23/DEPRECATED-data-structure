@@ -1,15 +1,15 @@
 package LinkedList;
 
-import DS.LLNode;
+import DS.ListNode;
 
 import java.util.HashMap;
 
 public class CycleDetection {
     public static void main(String[] args) {
-        LLNode node1 = new LLNode(3);
-        LLNode node2 = new LLNode(2);
-        LLNode node3 = new LLNode(3);
-        LLNode node4 = new LLNode(-4);
+        ListNode node1 = new ListNode(3);
+        ListNode node2 = new ListNode(2);
+        ListNode node3 = new ListNode(3);
+        ListNode node4 = new ListNode(-4);
         node1.setNext(node2);
         node2.setNext(node3);
         node3.setNext(node4);
@@ -18,30 +18,44 @@ public class CycleDetection {
         System.out.println(isCyclicV2(node1));
     }
 
-    private static boolean isCyclic(LLNode head) {
-        HashMap<LLNode, Integer> map = new HashMap();
-        LLNode temp = head;
+    private static boolean isCyclic(ListNode head) {
+        HashMap<ListNode, Integer> map = new HashMap();
+        ListNode temp = head;
         while (temp != null) {
             if (map.containsKey(temp)) {
                 return true;
             }
-            map.put(temp, temp.getValue());
+            map.put(temp, temp.getVal());
             temp = temp.getNext();
         }
         return false;
         
     }
 
-    private static boolean isCyclicV2(LLNode head) {
-        LLNode slowPointer = head;
-        LLNode fastPointer = head;
+    private static boolean isCyclicV2(ListNode head) {
+        ListNode slowPointer = head;
+        ListNode fastPointer = head;
         while (fastPointer!=null && fastPointer.getNext()!=null) {
             slowPointer = slowPointer.getNext();
             fastPointer = fastPointer.getNext().getNext();
-            if(slowPointer==fastPointer)
+            if(slowPointer==fastPointer) {
+                System.out.println(lengthCycle(slowPointer));
                 return true;
+            }
         }
         return false;
 
+    }
+
+    public static int lengthCycle(ListNode slowPointer) {
+        ListNode node = slowPointer;
+        int count =1;
+        while (true){
+            slowPointer = slowPointer.next;
+            if(slowPointer==node){
+                return count;
+            }
+            count++;
+        }
     }
 }
