@@ -4,8 +4,8 @@ import DS.ListNode;
 
 public class ReorderList {
     public static void main(String[] args) {
-        ListNode node9 = new ListNode(9);
-        ListNode node8 = new ListNode(8,node9);
+//        ListNode node9 = new ListNode(9);
+        ListNode node8 = new ListNode(8);
         ListNode node7 = new ListNode(7,node8);
         ListNode node6 = new ListNode(6,node7);
         ListNode node5 = new ListNode(5,node6);
@@ -14,7 +14,7 @@ public class ReorderList {
         ListNode node2 = new ListNode(2,node3);
         ListNode head = new ListNode(1,node2);
         head.printLinkedList();
-        reorderList(head);
+        reorderListV1(head);
         head.printLinkedList();
     }
 
@@ -48,6 +48,24 @@ public class ReorderList {
             headReverse = tempSecond;
         }
         indexNode.next=null;
+    }
+
+    private static void reorderListV1(ListNode head) {
+        if(head==null || head.next==null)
+            return;
+        ListNode middle = middleNode(head);
+        ListNode headSecond = reverseLL(middle);
+        ListNode headFirst = head;
+        while (headFirst!=null && headSecond!=null){
+            ListNode temp = headFirst.next;
+            headFirst.next = headSecond;
+            headFirst = temp;
+            temp = headSecond.next;
+            headSecond.next = headFirst;
+            headSecond = temp;
+        }
+        if(headFirst!=null)
+            headFirst.next = null;
     }
 
     public static ListNode middleNode(ListNode head) {
