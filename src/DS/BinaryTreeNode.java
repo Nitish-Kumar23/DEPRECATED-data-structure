@@ -1,18 +1,18 @@
 package DS;
 
-public class BinaryTree {
+public class BinaryTreeNode {
     private int val;
-    private BinaryTree left;
-    private BinaryTree right;
+    private BinaryTreeNode left;
+    private BinaryTreeNode right;
 
-    public BinaryTree() {
+    public BinaryTreeNode() {
     }
 
-    public BinaryTree(int val) {
+    public BinaryTreeNode(int val) {
         this.val = val;
     }
 
-    BinaryTree(int val, BinaryTree left, BinaryTree right) {
+    BinaryTreeNode(int val, BinaryTreeNode left, BinaryTreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;
@@ -26,19 +26,19 @@ public class BinaryTree {
         this.val = val;
     }
 
-    public BinaryTree getLeft() {
+    public BinaryTreeNode getLeft() {
         return left;
     }
 
-    public void setLeft(BinaryTree left) {
+    public void setLeft(BinaryTreeNode left) {
         this.left = left;
     }
 
-    public BinaryTree getRight() {
+    public BinaryTreeNode getRight() {
         return right;
     }
 
-    public void setRight(BinaryTree right) {
+    public void setRight(BinaryTreeNode right) {
         this.right = right;
     }
 
