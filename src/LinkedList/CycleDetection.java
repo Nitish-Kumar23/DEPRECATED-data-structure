@@ -1,6 +1,6 @@
 package LinkedList;
 
-import ds.custom.implementation.ListNode;
+import StandardDSImplementation.custom.implementation.ListNode;
 
 import java.util.HashMap;
 

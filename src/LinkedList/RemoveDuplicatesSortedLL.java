@@ -1,6 +1,6 @@
 package LinkedList;
 
-import ds.custom.implementation.MyLinkedList;
+import StandardDSImplementation.custom.implementation.MyLinkedList;
 
 public class RemoveDuplicatesSortedLL {
     public static void main(String[] args) {

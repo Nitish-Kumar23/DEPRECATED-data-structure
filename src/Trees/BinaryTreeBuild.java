@@ -1,6 +1,6 @@
 package Trees;
 
-import ds.custom.implementation.BinaryTreeNode;
+import StandardDSImplementation.custom.implementation.BinaryTreeNode;
 
 import java.util.Scanner;
 

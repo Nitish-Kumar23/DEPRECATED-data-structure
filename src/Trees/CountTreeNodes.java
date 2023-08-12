@@ -1,6 +1,6 @@
 package Trees;
 
-import ds.custom.implementation.BinaryTreeNode;
+import StandardDSImplementation.custom.implementation.BinaryTreeNode;
 
 public class CountTreeNodes {
     public static void main(String[] args) {
