@@ -1,4 +1,4 @@
-package DS;
+package ds.custom.implementation;
 
 public class CircularLinkedList {
     public ListNode head;
@@ -59,7 +59,7 @@ public class CircularLinkedList {
 
     public  void insertNode(int value){
         ListNode node = new ListNode(value);
-        if(head==null){
+        if(head ==null){
             head = node;
             tail = node;
             return;

@@ -1,12 +1,29 @@
 package Arrays;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class TwoSum {
     public static void main(String[] args) {
-        int[] numbers = {5, 25, 75};
+        int[] numbers = {3, 2, 4};
         System.out.println(Arrays.toString(twoSumIndexes(numbers, 100)));
         System.out.println(Arrays.toString(twoSumIndexesV2(numbers, 100)));
+        System.out.println(Arrays.toString(twoSumIndexesV3(numbers,6)));
+    }
+
+    private static int[] twoSumIndexesV3(int[] nums, int target) {
+        int[] output = new int[2];
+        Map<Integer,Integer> map = new HashMap();
+        for (int i=0;i<nums.length;i++){
+            if(map.containsKey(target-nums[i])){
+                output[0] = i;
+                output[1] = map.get(target-nums[i]);
+                return output;
+            }
+            map.put(nums[i],i);
+        }
+        return output;
     }
 
     /**

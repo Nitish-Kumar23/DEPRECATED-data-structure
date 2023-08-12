@@ -6,7 +6,7 @@ import java.util.Arrays;
  * Bubble sort also known as sinking sort or exchange sort
  * stable sorting algorithm - when order is maintained for two or more equal values
  */
-public class BubbleSort implements ArraySort{
+public class BubbleSort implements ArraySort {
 
     public static void main(String[] args) {
         int[] arr = {5,4,3,2,1};

@@ -1,15 +1,15 @@
 package Trees;
 
-import DS.BinaryTree;
+import ds.custom.implementation.BinaryTreeNode;
 
 public class MaxDepth {
     public static void main(String[] args) {
-        BinaryTree root = new BinaryTree(1);
-        BinaryTree node1 = new BinaryTree(2);
-        BinaryTree node2 = new BinaryTree(3);
-        BinaryTree node3 = new BinaryTree(4);
-        BinaryTree node4 = new BinaryTree(5);
-        BinaryTree node5 = new BinaryTree(6);
+        BinaryTreeNode root = new BinaryTreeNode(1);
+        BinaryTreeNode node1 = new BinaryTreeNode(2);
+        BinaryTreeNode node2 = new BinaryTreeNode(3);
+        BinaryTreeNode node3 = new BinaryTreeNode(4);
+        BinaryTreeNode node4 = new BinaryTreeNode(5);
+        BinaryTreeNode node5 = new BinaryTreeNode(6);
         root.setLeft(node1);
         root.setRight(node2);
         node1.setLeft(node3);
@@ -18,7 +18,7 @@ public class MaxDepth {
         System.out.println(maxDepth(root));
     }
 
-    public static int maxDepth(BinaryTree root) {
+    public static int maxDepth(BinaryTreeNode root) {
         if(root==null){
             return 0;
         }

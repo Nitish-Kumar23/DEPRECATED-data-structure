@@ -1,8 +1,6 @@
-package com.dsa.custom.implementation;
+package ds.custom.implementation;
 
 import com.datastructure.dsa.StackException;
-
-import java.util.Arrays;
 
 public class StackImplementation {
     

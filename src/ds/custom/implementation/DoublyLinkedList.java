@@ -1,10 +1,62 @@
-package DS;
+package ds.custom.implementation;
 
 public class DoublyLinkedList {
-
-    private static DoublyLinkedListNode head = null;
-    private static DoublyLinkedListNode tail = null;
+    private static Node head = null;
+    private static Node tail = null;
     private static int size = 0;
+
+    public static class Node {
+        public int data;
+        public Node prev;
+        public Node next;
+
+        public Node(int data) {
+            this.data = data;
+            this.prev = null;
+            this.next = null;
+        }
+
+        public Node(int data, Node prev, Node next) {
+            this.data = data;
+            this.prev = prev;
+            this.next = next;
+        }
+
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
+
+        public Node getPrev() {
+            return prev;
+        }
+
+        public void setPrev(Node prev) {
+            this.prev = prev;
+        }
+
+        public Node getNext() {
+            return next;
+        }
+
+        public void setNext(Node next) {
+            this.next = next;
+        }
+
+        @Override
+        public String toString() {
+            final StringBuilder sb = new StringBuilder("Node{");
+            sb.append("data=").append(data);
+            sb.append(", prev=").append(prev);
+            sb.append(", next=").append(next);
+            sb.append('}');
+            return sb.toString();
+        }
+    }
+
 
     public static void main(String[] args) {
         DoublyLinkedList list = new DoublyLinkedList();
@@ -19,9 +71,9 @@ public class DoublyLinkedList {
         printLinkedList();
     }
 
-    private static void printLinkedListRev(DoublyLinkedListNode lastNode) {
+    private static void printLinkedListRev(Node lastNode) {
         System.out.print("Print in reverse : ");
-        DoublyLinkedListNode node = lastNode;
+        Node node = lastNode;
         while (node != null) {
             System.out.print(node.data + "->");
             node = node.prev;
@@ -29,8 +81,8 @@ public class DoublyLinkedList {
         System.out.println("END");
     }
 
-    public static DoublyLinkedListNode getLastNode() {
-        DoublyLinkedListNode node = head;
+    public static Node getLastNode() {
+        Node node = head;
         while (node.next != null) {
             node = node.next;
         }
@@ -38,7 +90,7 @@ public class DoublyLinkedList {
     }
 
     private static void printLinkedList() {
-        DoublyLinkedListNode node = head;
+        Node node = head;
         while (node != null) {
             System.out.print(node.data + "->");
             node = node.next;
@@ -47,7 +99,7 @@ public class DoublyLinkedList {
     }
 
     private static void addNodeAtHead(int value) {
-        DoublyLinkedListNode node = new DoublyLinkedListNode(value);
+        Node node = new Node(value);
         if (head != null) {
             node.prev = head.prev;
             head.prev = node;
@@ -69,20 +121,23 @@ public class DoublyLinkedList {
 
         if (index == size) {
             tail = getLastNode();
-            DoublyLinkedListNode node = new DoublyLinkedListNode(val, tail, tail.next);
+            Node node = new Node(val, tail, tail.next);
             tail.next = node;
             tail = node;
             return;
         }
 
-        DoublyLinkedListNode temp = head;
+        Node temp = head;
         for (int i = 0; i < index - 1; i++) {
             temp = temp.getNext();
         }
-        DoublyLinkedListNode node = new DoublyLinkedListNode(val, temp, temp.next);
+        Node node = new Node(val, temp, temp.next);
         temp.next = node;
         node.next.prev = node;
         temp.setNext(node);
         size += 1;
     }
+    
+    
+
 }

@@ -1,6 +1,6 @@
 package LinkedList;
 
-import DS.ListNode;
+import ds.custom.implementation.ListNode;
 
 public class MergeTwoSortedLL {
     public static void main(String[] args) {

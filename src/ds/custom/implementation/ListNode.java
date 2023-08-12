@@ -1,4 +1,4 @@
-package DS;
+package ds.custom.implementation;
 
 public class ListNode {
     public int val;

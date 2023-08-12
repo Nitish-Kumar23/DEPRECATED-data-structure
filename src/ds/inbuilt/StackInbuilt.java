@@ -1,4 +1,4 @@
-package com.datastrucure.inbuilt;
+package ds.inbuilt;
 
 import java.util.Stack;
 

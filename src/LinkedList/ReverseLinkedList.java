@@ -1,7 +1,7 @@
 package LinkedList;
 
-import DS.ListNode;
-import DS.MyLinkedList;
+import ds.custom.implementation.ListNode;
+import ds.custom.implementation.MyLinkedList;
 
 import java.util.Stack;
 
